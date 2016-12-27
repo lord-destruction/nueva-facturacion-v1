@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8292ee84-f254-4a36-a8d7-3d68f27412cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT fc.cod_facturaco,fc.codigo_fact,fc.ruc_proveedor,fc.fecha_emision,fc.total_facturaco FROM facturasco fc WHERE fecha_emision>=DATE_SUB(CURDATE(),INTERVAL 30 DAY)]]>
+	</queryString>
+	<field name="cod_facturaco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_fact" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ruc_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_emision" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_facturaco" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="61" y="36" width="404" height="29" uuid="84621f6a-2903-40d8-ba02-be181200735b"/>
+				<textElement>
+					<font fontName="Arial" size="24"/>
+				</textElement>
+				<text><![CDATA[FACTURAS EMITIDAS EN EL MES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="15" width="100" height="20" uuid="3743763f-bbd9-4b85-8926-977a53b5f9aa"/>
+				<text><![CDATA[Punto de Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="15" width="100" height="20" uuid="dab3d9d9-81f4-492c-8848-0ac42db0e758"/>
+				<text><![CDATA[Cod. Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="15" width="100" height="20" uuid="c6a45f8f-aedd-496a-9897-e2f662a1bdec"/>
+				<text><![CDATA[Ruc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="15" width="100" height="20" uuid="f61910f6-8d22-48b9-bfc3-df3011d8d70d"/>
+				<text><![CDATA[Fecha Emision]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="15" width="100" height="20" uuid="9742bacc-d7dd-4e79-8f52-ee86c726e5fe"/>
+				<text><![CDATA[V. Total]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="14" width="100" height="20" uuid="81de652f-f293-44b7-8755-0911e996d173"/>
+				<textFieldExpression><![CDATA[$F{cod_facturaco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="14" width="100" height="20" uuid="3bd95a87-e1b8-4310-859a-183e380e0a2b"/>
+				<textFieldExpression><![CDATA[$F{codigo_fact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="14" width="100" height="20" uuid="8da3e1e9-414f-4dc1-ad25-d87bb08a61fe"/>
+				<textFieldExpression><![CDATA[$F{ruc_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="14" width="100" height="20" uuid="96fc63c3-d273-4872-b914-35a5989af8b4"/>
+				<textFieldExpression><![CDATA[$F{fecha_emision}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="14" width="100" height="20" uuid="be0fc657-4f3e-4323-af16-85683fba881b"/>
+				<textFieldExpression><![CDATA[$F{total_facturaco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

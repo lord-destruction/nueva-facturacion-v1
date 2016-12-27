@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1eb8812c-d346-44c5-9cc8-9cdece8098d8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from cieres]]>
+	</queryString>
+	<field name="codigo_cierre" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_cierre" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ganancias" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="perdidas" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="147" y="23" width="297" height="26" uuid="457e60b8-5a15-4317-aa5b-8b5901b794a5"/>
+				<textElement>
+					<font fontName="Arial" size="20"/>
+				</textElement>
+				<text><![CDATA[CIERRES DE PERIODOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="15" width="100" height="20" uuid="04f508f2-f19c-4ef8-9453-669d7d1bb7be"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="15" width="100" height="20" uuid="7c5bd1ab-195b-4298-b9db-e15127ec9c0b"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="15" width="100" height="20" uuid="1716e5e8-71ce-4352-89e0-12a3eb76cf9e"/>
+				<text><![CDATA[Ganancias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="15" width="100" height="20" uuid="2a5f23a9-5dd8-436d-a6f9-eaf2339b26e2"/>
+				<text><![CDATA[Perdidas]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="5" width="100" height="20" uuid="937d82ab-443f-4ca2-b571-d636c68d81a2"/>
+				<textFieldExpression><![CDATA[$F{codigo_cierre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="5" width="100" height="20" uuid="c63fd70b-928f-4698-87bd-60d4a690b3ce"/>
+				<textFieldExpression><![CDATA[$F{fecha_cierre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="5" width="100" height="20" uuid="7e3a1d7f-e709-4370-bf0e-8e731441ee0c"/>
+				<textFieldExpression><![CDATA[$F{ganancias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="5" width="100" height="20" uuid="d79aa226-046e-48aa-a194-0ff17567c86e"/>
+				<textFieldExpression><![CDATA[$F{perdidas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

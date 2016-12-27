@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0f65e4a-983c-4b53-9431-dc7a5cef50cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select t.cod_cuenta,t.des_cuenta,(sum(t.debe)),sum(t.haber) from transacciones t where t.fecha_trans=curdate() group by t.cod_cuenta order by (sum(t.debe)) desc 
+]]>
+	</queryString>
+	<field name="cod_cuenta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="des_cuenta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="(sum(t.debe))" class="java.lang.Double"/>
+	<field name="sum(t.haber)" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="103" y="25" width="371" height="25" uuid="68f69409-08dd-40d4-b2f9-610e6450922a"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[ESTADO DE CUENTAS  DEL LIBRO DIARIO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="0" width="100" height="20" uuid="86042e23-b434-4fee-a24e-133b881aca66"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="0" width="100" height="20" uuid="62f5ddc1-009d-42c2-9a3d-57362055d594"/>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="0" width="100" height="20" uuid="2fdae071-57a6-4c18-a51e-c5c8bb63c212"/>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="0" width="100" height="20" uuid="8146122d-849d-4f0e-8f2a-8c6494494613"/>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="0" width="100" height="20" uuid="64776bac-a311-4036-9593-c6ef9329ea41"/>
+				<textFieldExpression><![CDATA[$F{cod_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="169" height="20" uuid="736dcef8-db0c-49cd-95fc-fdfe3c47051d"/>
+				<textFieldExpression><![CDATA[$F{des_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="0" width="100" height="20" uuid="3d94c40c-061e-4768-9692-5ac639f93ebc"/>
+				<textFieldExpression><![CDATA[$F{(sum(t.debe))}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="100" height="20" uuid="300d8f98-a97d-4088-90f8-c7f98fe9aff6"/>
+				<textFieldExpression><![CDATA[$F{sum(t.haber)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

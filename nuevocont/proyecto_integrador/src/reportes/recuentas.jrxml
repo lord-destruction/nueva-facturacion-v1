@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="888afb3d-dd48-46f3-8684-523702950805">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     CONVERT(cod_cuenta,CHAR(50)) AS uno,
+     nombre_cuenta AS unos
+FROM
+     `cuentas` cuentas
+UNION
+SELECT
+     cod_subcuenta,
+     nombre_subcuenta
+FROM
+     `subcuentas`
+UNION
+SELECT
+     cod_subcuenta1,
+     nombre_subcuenta1
+FROM
+     `subcuenta1`
+UNION
+SELECT
+     cod_subcuenta2,
+     nombre_subcuenta2
+FROM
+     `subcuenta2`
+UNION
+SELECT
+     cod_subcuenta3,
+     nombre_subcuenta3
+FROM
+     `subcuenta3`
+ORDER BY
+     uno ASC]]>
+	</queryString>
+	<field name="uno" class="java.lang.String"/>
+	<field name="unos" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="133" y="19" width="289" height="37" uuid="82a91e6f-ed32-47c7-97ca-9202f7dbec2c"/>
+				<textElement>
+					<font fontName="Arial" size="30"/>
+				</textElement>
+				<text><![CDATA[PLAN DE CUENTAS ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="0" width="100" height="20" uuid="a0d9fb06-3200-4b6b-91cc-cd7c3105f9b6"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="0" width="100" height="20" uuid="103bbff1-b03f-4fea-8413-605bb227b74d"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Cuentas]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="117" y="0" width="100" height="20" uuid="8f0e5964-06c7-458d-988b-53610d0ad9c5"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="0" width="100" height="20" uuid="778cd762-c89c-4c5d-8b7a-86ac882ec47d"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

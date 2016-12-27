@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a8607988-6f44-4d14-895f-ffc56f6a2c26">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT t.`cod_trans`,t.`cod_cuenta`,t.`des_cuenta`,t.`debe`, t.`haber`,(select sum(transacciones.debe) from transacciones)as debes,(select sum(transacciones.haber) from transacciones)as habers,sum(haber)FROM `transacciones` t group by t.`cod_cuenta`;
+
+]]>
+	</queryString>
+	<field name="cod_trans" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_cuenta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="des_cuenta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debe" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="haber" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debes" class="java.lang.Double"/>
+	<field name="habers" class="java.lang.Double"/>
+	<field name="sum(haber)" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="108" y="24" width="337" height="27" uuid="8237fd9d-21b9-453d-8ca4-c420e116fce4"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[ESTADO DE GANANCIAS Y PERDIDAD]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="0" width="100" height="20" uuid="694c59ed-651b-4712-89b9-2214bdb72d63"/>
+				<textFieldExpression><![CDATA[$F{cod_trans}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="0" width="100" height="20" uuid="27b0fe69-3ceb-464e-9d33-ac4b5e9c083e"/>
+				<textFieldExpression><![CDATA[$F{cod_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="0" width="100" height="20" uuid="53ff7942-b8a9-41ee-b1ba-cf8acd5d2697"/>
+				<textFieldExpression><![CDATA[$F{des_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="0" width="83" height="20" uuid="4a1716e8-e56d-4a0a-a580-c5e1e031852a"/>
+				<textFieldExpression><![CDATA[$F{debe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="0" width="77" height="20" uuid="24e101a0-00f3-4564-9dbd-4a823ccab4b3"/>
+				<textFieldExpression><![CDATA[$F{haber}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="362" y="13" width="83" height="20" uuid="124da562-6805-44e3-a525-985baa28f49a"/>
+				<textFieldExpression><![CDATA[$F{debes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="13" width="77" height="20" uuid="17a7dadc-e860-4781-a87f-602dfd0655ee"/>
+				<textFieldExpression><![CDATA[$F{habers}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

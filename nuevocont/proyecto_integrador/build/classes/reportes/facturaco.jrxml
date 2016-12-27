@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="facturaco" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2375ea99-be36-4a7b-ba6b-bb5ee03f663a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="28"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset" uuid="c7710a5c-55a5-4b59-ba8b-e56a0341648e">
+		<queryString language="SQL">
+			<![CDATA[select cod_producto,producto_detalle,cantidad_detalle,valor_unitario,valor_total from detalle_facturaco df, facturasco f where df.cod_facturaco=f.codigo_fact and df.cod_facturaco=(select codigo_fact from facturasco order by codigo_fact desc limit 1)]]>
+		</queryString>
+		<field name="cod_producto" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="producto_detalle" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="cantidad_detalle" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="valor_unitario" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="valor_total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2" uuid="3d8f63ec-2f52-4bae-9801-054125e5e726">
+		<queryString language="SQL">
+			<![CDATA[select cod_producto,producto_detalle,cantidad_detalle,valor_unitario,valor_total from detalle_facturaco df, facturasco f where df.cod_facturaco=f.codigo_fact and df.cod_facturaco=(select codigo_fact from facturasco order by codigo_fact desc limit 1)]]>
+		</queryString>
+		<field name="cod_producto" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="producto_detalle" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="cantidad_detalle" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="valor_unitario" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="valor_total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     `proveedores` p INNER JOIN `facturasco` f ON p.`ruc_proveedor` = f.`ruc_proveedor`,
+     `empresa` empresa
+ORDER BY
+     f.codigo_fact DESC]]>
+	</queryString>
+	<field name="ruc_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_eproveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombres_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciudad_proveedir" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigofms_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="autorizacionsri_proveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="iniciof_proveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="finalizacionf_proveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechacf_proveedor" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado_proveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_facturaco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_facturaco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_emision" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacion_facturaco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subtotal_facturaco" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="iva_facturaco" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descuento_facturaco" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_facturaco" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado_facturaco" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_fact" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_empresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciudad_empresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoms_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="autorizacionsri_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="facturacioni_empresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="facturacionf_empresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechacaducidadf_empresa" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="encargado_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ruc_empresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<textField>
+				<reportElement x="179" y="11" width="208" height="35" uuid="2c111bd4-d0ae-4a67-a7e8-2aad0219f103"/>
+				<textElement>
+					<font fontName="Perpetua Titling MT" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_empresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="0" width="100" height="20" uuid="bdce5951-eca2-4257-9ef7-eb41b6f0e41a"/>
+				<text><![CDATA[FACTURA LOCAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="0" width="100" height="20" uuid="7151a865-8ca7-4cb8-b8f5-11254241bc8c"/>
+				<text><![CDATA[RUC EMPRESA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="411" y="0" width="100" height="20" uuid="1c3d951a-dffe-46c9-87c4-c624233f04e5"/>
+				<textFieldExpression><![CDATA[$F{ruc_empresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement x="64" y="0" width="144" height="20" uuid="a105071c-9372-4008-aa3e-9f56668f23b0"/>
+				<text><![CDATA[Información Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="24" width="32" height="13" uuid="5c50d2b0-90dd-486e-ae17-1b929a085e2a"/>
+				<text><![CDATA[Ruc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="37" width="100" height="15" uuid="2bc34dc6-7edc-41ab-9ef3-1e5cf865b908"/>
+				<text><![CDATA[Nombre Empresa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="52" width="100" height="13" uuid="47c67272-4403-4250-aad3-f527e989d11a"/>
+				<text><![CDATA[Persona Contacto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="65" width="100" height="16" uuid="3003f2e9-a2c0-4c70-9081-709aef85f0ac"/>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="81" width="100" height="16" uuid="857bd9af-4d64-4ce2-86d1-b08816a7b26d"/>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="97" width="100" height="13" uuid="26a8cfdf-054a-4a9b-9a43-2e5ddb16dd63"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="132" y="24" width="119" height="13" uuid="1299be36-f2bf-4ae4-b8b6-b63aa1dcfc94"/>
+				<textFieldExpression><![CDATA[$F{ruc_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="37" width="119" height="15" uuid="26d1b0ac-c23f-424e-93e7-3458c5d518b8"/>
+				<textFieldExpression><![CDATA[$F{nombre_eproveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="52" width="119" height="13" uuid="d090b5de-21a2-416d-8ccb-efc6f3c44566"/>
+				<textFieldExpression><![CDATA[$F{nombres_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="65" width="119" height="16" uuid="f09c3d19-19cf-4a90-abfc-707c8764b9c7"/>
+				<textFieldExpression><![CDATA[$F{telefono_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="81" width="119" height="16" uuid="944eb1c3-0c78-4ccd-97f2-9f6256e1d28f"/>
+				<textFieldExpression><![CDATA[$F{email_proveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="97" width="119" height="13" uuid="df8f8969-3ab3-4539-afef-f1974479ec73"/>
+				<textFieldExpression><![CDATA[$F{direccion_proveedor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="0" width="118" height="20" uuid="5f0e9b92-e10d-4a48-903e-da9818f77397"/>
+				<text><![CDATA[Facturación Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="24" width="100" height="13" uuid="f1addb6e-d004-4250-96ea-f2418d43e051"/>
+				<text><![CDATA[Código Fáctura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="37" width="100" height="15" uuid="d3091ac2-3500-422b-a2c5-47a1e9530da8"/>
+				<text><![CDATA[Número Fáctura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="52" width="100" height="13" uuid="41820dc4-6f78-4650-8e9c-acf2da9ca891"/>
+				<text><![CDATA[Aut. SRI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="85" width="100" height="16" uuid="760cf327-fe05-4ce7-bf8a-91341d77bae6"/>
+				<text><![CDATA[Fecha Caducidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="404" y="24" width="100" height="13" uuid="625cf1ca-813a-4e80-b939-c72218763b15"/>
+				<textFieldExpression><![CDATA[$F{cod_facturaco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="37" width="100" height="15" uuid="2eefca5a-5f25-450b-8e6f-b41a194bf2c9"/>
+				<textFieldExpression><![CDATA[$F{numero_facturaco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="52" width="100" height="13" uuid="649f0fb7-672d-4ff7-85ef-fa36d53d453b"/>
+				<textFieldExpression><![CDATA[$F{autorizacionsri_empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="85" width="100" height="16" uuid="d89c9639-f199-4a72-87cc-4391abe986f4"/>
+				<textFieldExpression><![CDATA[$F{fechacf_proveedor}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="14" y="0" width="237" height="121" uuid="581950ee-9e15-4536-a44f-5338b89ea536"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="287" y="65" width="100" height="20" uuid="e719fff3-2baf-4bfc-8f6e-fac4e891f99e"/>
+				<text><![CDATA[Fecha Emisión]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="404" y="65" width="100" height="20" uuid="44c8473a-fa57-4003-8534-19926530e812"/>
+				<textFieldExpression><![CDATA[$F{fecha_emision}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="265" y="0" width="246" height="121" uuid="c3814359-60f4-4209-b652-b4fa1edf22ef"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="219" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 4" style="table 4" mode="Transparent" x="54" y="27" width="415" height="140" uuid="a71f73a2-6a96-42f1-a64a-ce2bef97da3a"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset2" uuid="ff69cc0d-3617-4547-813e-f462a48941f4"/>
+					<jr:column width="90" uuid="5ce27458-1fe2-495d-bea4-1a2e498a0b23">
+						<jr:tableHeader style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:tableFooter style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:columnHeader style="table 4_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2d16a6a2-9266-48ae-8471-2ebe1303ada0"/>
+								<text><![CDATA[Codigo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 4_CH" height="60" rowSpan="1"/>
+						<jr:detailCell style="table 4_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="d02648f3-bbcc-4cd2-90cc-685143469b9b"/>
+								<textFieldExpression><![CDATA[$F{cod_producto}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="9464313e-0af1-4597-be1c-828c218219b7">
+						<jr:tableHeader style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:tableFooter style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:columnHeader style="table 4_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e7d4c460-96df-435d-97ca-a4e82859e3bd"/>
+								<text><![CDATA[Producto]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 4_CH" height="60" rowSpan="1"/>
+						<jr:detailCell style="table 4_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="4b480d46-a98c-4c95-b236-d42a90212066"/>
+								<textFieldExpression><![CDATA[$F{producto_detalle}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="dad2afb3-dc57-4439-b073-5f26ff418f6a">
+						<jr:tableHeader style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:tableFooter style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:columnHeader style="table 4_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e4d30788-0ba7-4d94-a4dc-ddaaa1d66576"/>
+								<text><![CDATA[Cantidad]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 4_CH" height="60" rowSpan="1"/>
+						<jr:detailCell style="table 4_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="aab3aa57-0a2b-48cc-9fa1-ff9e743a6b86"/>
+								<textFieldExpression><![CDATA[$F{cantidad_detalle}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c20376ea-c7ec-457a-8ea6-bbb76ed0e135">
+						<jr:tableHeader style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:tableFooter style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:columnHeader style="table 4_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="3ad06d76-fc9d-4df4-a69e-54b04d9ff993"/>
+								<text><![CDATA[Valor Unitaro]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 4_CH" height="60" rowSpan="1"/>
+						<jr:detailCell style="table 4_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="823abe72-f178-4540-bdca-0ae43935eaa6"/>
+								<textFieldExpression><![CDATA[$F{valor_unitario}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="b8e0ff01-74b2-4c90-8f12-0eb81f53499f">
+						<jr:tableHeader style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:tableFooter style="table 4_TH" height="60" rowSpan="1"/>
+						<jr:columnHeader style="table 4_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="50d3bbad-dd68-4a99-94a0-14c4ecadefc5"/>
+								<text><![CDATA[Valor Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 4_CH" height="60" rowSpan="1"/>
+						<jr:detailCell style="table 4_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="5310bbba-7a8b-4648-9d31-a9d12f6c3835"/>
+								<textFieldExpression><![CDATA[$F{valor_total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="77" splitType="Stretch">
+			<textField>
+				<reportElement x="387" y="28" width="100" height="20" uuid="d5ed9318-ec1a-4aac-9d72-b80b10565b92"/>
+				<textFieldExpression><![CDATA[$F{subtotal_facturaco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="327" y="29" width="48" height="19" uuid="d6ea46e4-0ec7-479b-9ff4-71453424af85"/>
+				<text><![CDATA[Subtotal]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
